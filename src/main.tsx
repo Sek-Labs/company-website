@@ -8,13 +8,15 @@ const products = [
     description:
       "Rental due-diligence reports that help New York City renters understand building quality, complaint history, and risk signals before signing a lease.",
     href: "https://brickreports.com",
+    linkLabel: "Visit BrickReports",
   },
   {
     name: "Tally",
     status: "In development",
     description:
-      "A personal finance product focused on helping people understand cash flow, habits, and financial decisions with less friction.",
-    href: "#products",
+      "A personal finance product focused on helping people understand cash flow, habits, and everyday financial decisions with less friction.",
+    href: "https://tallyfinances.com/",
+    linkLabel: "Visit Tally",
   },
 ];
 
@@ -29,20 +31,22 @@ function App() {
         <nav>
           <a href="#about">About</a>
           <a href="#products">Products</a>
-          <a href="#privacy">Privacy</a>
+          <a href="#policies">Policies</a>
           <a href="#contact">Contact</a>
         </nav>
       </header>
 
       <section id="top" className="hero">
-        <p className="eyebrow">Independent software studio</p>
-        <h1>Practical software for better everyday decisions.</h1>
-        <p className="hero-copy">
-          Sek Labs LLC builds focused consumer and productivity tools that turn messy real-world information into clear, useful workflows.
-        </p>
-        <div className="hero-actions">
-          <a className="button primary" href="#products">View products</a>
-          <a className="button secondary" href="mailto:hello@sek-labs.com">Contact us</a>
+        <div className="hero-inner">
+          <p className="eyebrow">Independent software studio</p>
+          <h1>Practical software for better everyday decisions.</h1>
+          <p className="hero-copy">
+            Sek Labs LLC builds focused consumer and productivity tools that turn messy real-world information into clear, useful workflows.
+          </p>
+          <div className="hero-actions">
+            <a className="button primary" href="#products">View products</a>
+            <a className="button secondary" href="mailto:support@sek-labs.com">Contact support</a>
+          </div>
         </div>
       </section>
 
@@ -67,25 +71,39 @@ function App() {
                 <span>{product.status}</span>
               </div>
               <p>{product.description}</p>
-              <a href={product.href} aria-label={`Learn more about ${product.name}`}>Learn more →</a>
+              <a href={product.href} aria-label={product.linkLabel}>{product.linkLabel} →</a>
             </article>
           ))}
         </div>
       </section>
 
-      <section id="privacy" className="section legal-grid">
-        <article>
+      <section id="policies" className="section legal-grid">
+        <article id="privacy">
           <p className="eyebrow">Privacy</p>
-          <h2>Respect for user data</h2>
+          <h2>Privacy policy</h2>
           <p>
-            Sek Labs products collect only the information needed to operate and improve each product. We do not sell personal information. Product-specific privacy notices are provided where a product requires account or payment functionality.
+            Sek Labs products collect only the information needed to operate, secure, support, and improve each product. We do not sell personal information. Product-specific privacy notices are provided where a product requires account, payment, or financial functionality.
           </p>
         </article>
         <article id="terms">
           <p className="eyebrow">Terms</p>
-          <h2>Clear product terms</h2>
+          <h2>Terms of use</h2>
           <p>
-            Use of Sek Labs products is governed by the terms presented in each product experience. If terms are not yet published for a product in development, access is limited and experimental until formal terms are available.
+            Use of Sek Labs products is governed by the terms presented in each product experience. Products in development may be limited, experimental, or invite-only until formal terms are published.
+          </p>
+        </article>
+        <article id="cookies">
+          <p className="eyebrow">Cookies</p>
+          <h2>Cookie notice</h2>
+          <p>
+            This company website does not require a cookie banner because it does not set non-essential cookies or run behavioral advertising. Individual Sek Labs products may publish separate cookie or tracking notices if their functionality requires them.
+          </p>
+        </article>
+        <article>
+          <p className="eyebrow">Apple developer enrollment</p>
+          <h2>Organization details</h2>
+          <p>
+            Public company website for Sek Labs LLC, including legal name, product links, support contact, and policy summaries for organization verification workflows.
           </p>
         </article>
       </section>
@@ -97,13 +115,13 @@ function App() {
           <div><dt>Legal name</dt><dd>Sek Labs LLC</dd></div>
           <div><dt>Business type</dt><dd>Independent software studio</dd></div>
           <div><dt>Jurisdiction</dt><dd>Washington, United States</dd></div>
-          <div><dt>Email</dt><dd><a href="mailto:hello@sek-labs.com">hello@sek-labs.com</a></dd></div>
+          <div><dt>Support email</dt><dd><a href="mailto:support@sek-labs.com">support@sek-labs.com</a></dd></div>
         </dl>
       </section>
 
       <footer>
         <span>© {new Date().getFullYear()} Sek Labs LLC. All rights reserved.</span>
-        <a href="mailto:hello@sek-labs.com">hello@sek-labs.com</a>
+        <a href="mailto:support@sek-labs.com">support@sek-labs.com</a>
       </footer>
     </main>
   );
