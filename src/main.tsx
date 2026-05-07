@@ -31,7 +31,6 @@ function App() {
         <nav>
           <a href="#about">About</a>
           <a href="#products">Products</a>
-          <a href="#policies">Policies</a>
           <a href="#contact">Contact</a>
         </nav>
       </header>
@@ -77,37 +76,6 @@ function App() {
         </div>
       </section>
 
-      <section id="policies" className="section legal-grid">
-        <article id="privacy">
-          <p className="eyebrow">Privacy</p>
-          <h2>Privacy policy</h2>
-          <p>
-            Sek Labs products collect only the information needed to operate, secure, support, and improve each product. We do not sell personal information. Product-specific privacy notices are provided where a product requires account, payment, or financial functionality.
-          </p>
-        </article>
-        <article id="terms">
-          <p className="eyebrow">Terms</p>
-          <h2>Terms of use</h2>
-          <p>
-            Use of Sek Labs products is governed by the terms presented in each product experience. Products in development may be limited, experimental, or invite-only until formal terms are published.
-          </p>
-        </article>
-        <article id="cookies">
-          <p className="eyebrow">Cookies</p>
-          <h2>Cookie notice</h2>
-          <p>
-            This company website does not require a cookie banner because it does not set non-essential cookies or run behavioral advertising. Individual Sek Labs products may publish separate cookie or tracking notices if their functionality requires them.
-          </p>
-        </article>
-        <article>
-          <p className="eyebrow">Apple developer enrollment</p>
-          <h2>Organization details</h2>
-          <p>
-            Public company website for Sek Labs LLC, including legal name, product links, support contact, and policy summaries for organization verification workflows.
-          </p>
-        </article>
-      </section>
-
       <section id="contact" className="section contact">
         <p className="eyebrow">Contact</p>
         <h2>Company information</h2>
@@ -120,8 +88,20 @@ function App() {
       </section>
 
       <footer>
-        <span>© {new Date().getFullYear()} Sek Labs LLC. All rights reserved.</span>
-        <a href="mailto:support@sek-labs.com">support@sek-labs.com</a>
+        <div className="footer-main">
+          <span>© {new Date().getFullYear()} Sek Labs LLC. All rights reserved.</span>
+          <a href="mailto:support@sek-labs.com">support@sek-labs.com</a>
+        </div>
+        <nav className="footer-links" aria-label="Company policies">
+          <a href="#privacy">Privacy</a>
+          <a href="#terms">Terms</a>
+          <a href="#cookies">Cookies</a>
+        </nav>
+        <div className="footer-policies" id="policies">
+          <p id="privacy"><strong>Privacy:</strong> Sek Labs products collect only the information needed to operate, secure, support, and improve each product. We do not sell personal information.</p>
+          <p id="terms"><strong>Terms:</strong> Use of Sek Labs products is governed by the terms presented in each product experience. Products in development may be limited, experimental, or invite-only.</p>
+          <p id="cookies"><strong>Cookies:</strong> This company website does not set non-essential cookies or run behavioral advertising, so it does not require a cookie banner.</p>
+        </div>
       </footer>
     </main>
   );
