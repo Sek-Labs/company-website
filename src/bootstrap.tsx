@@ -1,0 +1,11 @@
+import React from "react";
+import { createRoot } from "react-dom/client";
+import { App } from "./main";
+
+const root = document.getElementById("root");
+
+if (root === null) {
+  throw new Error("Root element #root was not found");
+}
+
+createRoot(root).render(<App />);
