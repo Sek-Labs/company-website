@@ -23,7 +23,7 @@ npm run build
 
 ## Deployment
 
-Do not deploy unless explicitly asked. If deployment is requested, use Fly.io for app `sek-labs-company`; do not add or restore GitHub Pages deployment.
+Commit, merge, and deploy completed, verified work automatically unless the request explicitly says not to deploy. Use Fly.io for app `sek-labs-company`; do not add or restore GitHub Pages deployment.
 
 ## Agent Notes
 
