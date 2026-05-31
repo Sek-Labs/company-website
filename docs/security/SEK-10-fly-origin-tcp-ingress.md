@@ -34,8 +34,23 @@ Machines (`flyctl m list -a sek-labs-company`):
 - `d8d2e09ce26478` (sjc) — STATE: `stopped`
 - `d8d2e26ce16268` (sjc) — STATE: `stopped`
 
-Both machines were `stopped` (auto-stop / start) during the entire investigation,
-so there cannot be an app-level listener on 3389.
+Both machines were `stopped` (auto-stop / start) during the initial investigation,
+so there cannot have been an app-level listener on 3389. Re-verification after
+waking a machine (`flyctl ssh console`, machine `d8d2e09ce26478` in state
+`started`):
+
+```
+$ netstat -tlnp
+Proto Local Address          PID/Program name
+tcp   0.0.0.0:8080           634/nginx: master
+tcp   [internal-v6]:22       635/hallpass        (Fly internal SSH agent)
+```
+
+Only `nginx` on `8080` and Fly's `hallpass` on the internal IPv6 management
+interface. No process binds 3389 — and TCP 3389 on the external Fly IP still
+accepts handshakes and still returns 0 bytes to a valid RDP X.224 Connection
+Request. This is conclusive evidence that the 3389 accept is the Fly edge,
+not the app.
 
 ## Evidence — Fly shared IPv4 `66.241.124.204` accepts TCP on arbitrary ports
 
